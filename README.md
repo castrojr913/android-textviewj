@@ -9,19 +9,19 @@ TextViewJ is a library to implement a TextView component with full justification
 ### Instructions
 
 Write in your layout:
-
+```
 xmlns:textviewj="http://schemas.android.com/apk/res-auto"
-
+```
 Then, use:
-
+```
   <com.jacr.textviewj.TextViewJ
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="your_text"
         />
-
+```
 For more customizing, you can specify spacing between text lines and number of words by line.
-
+```
  <com.jacr.textviewj.TextViewJ
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@ For more customizing, you can specify spacing between text lines and number of w
         textviewj:wordsByLine="your_value_integer"
         android:text="your_text"
         />
-
+```
 
 ### Developed By
 Jesús Castro - castrojr913@gmail.com
