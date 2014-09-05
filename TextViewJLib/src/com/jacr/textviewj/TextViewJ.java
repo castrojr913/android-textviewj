@@ -78,6 +78,46 @@ public class TextViewJ extends TextView {
 	}
 
 	/**
+	 * Get spacing among text lines.
+	 * 
+	 * @return spacing for each text line.
+	 */
+	public float getLineSpacing() {
+		return mLineSpacing;
+	}
+
+	/**
+	 * Set spacing among text lines.
+	 * 
+	 * @param mLineSpacing
+	 *            Value in pixels.
+	 */
+	public void setLineSpacing(float mLineSpacing) {
+		this.mLineSpacing = mLineSpacing;
+		uglyUpdate();
+	}
+
+	/**
+	 * Set the number of words by text line.
+	 * 
+	 * @return number of words.
+	 */
+	public int getWordsByLine() {
+		return mWordsNum;
+	}
+
+	/**
+	 * Set the number of words by text line.
+	 * 
+	 * @param mWordsNum
+	 *            Number of words.
+	 */
+	public void setWordsByLine(int mWordsNum) {
+		this.mWordsNum = mWordsNum;
+		uglyUpdate();
+	}
+
+	/**
 	 * Load default values.
 	 */
 	private void init() {
@@ -124,8 +164,7 @@ public class TextViewJ extends TextView {
 							wordsNumAux);
 					/*
 					 * En caso de que el limite de palabras sea demasiado alto,
-					 * para el calculo de espacios, se disminuye. Aun asi, si no
-					 * es posible, no se tendran en cuenta las lineas de texto.
+					 * para el calculo de espacios, se disminuye en 1.
 					 */
 					if ((--wordsNumAux) < 1) {
 						break;
@@ -174,7 +213,8 @@ public class TextViewJ extends TextView {
 			if (lineBuffer.getWords().size() == wordsNumLimit) {
 				newSpacing = calculateSpacing(viewWidth, lineBuffer,
 						wordsNumLimit);
-				// if spacing isnt enough, i request a new words number limit
+				// if spacing isn't enough, i request a new limit of number of
+				// words
 				if (newSpacing == -1) {
 					return null;
 				}
@@ -239,7 +279,7 @@ public class TextViewJ extends TextView {
 					listLines.add(lineBuffer);
 					lineBuffer = new Line();
 					fExceedChars = false;
-					// Caso: ultima palabra y existe caso postword
+					// Caso: ultima palabra y si existe caso postword
 					if (i == words.length - 1
 							&& !Utils.isEmptyOrNull(splitList.get(post_word))) {
 						fLastPostWord = true;
@@ -350,6 +390,13 @@ public class TextViewJ extends TextView {
 		return this.mDefaultBackgroundColor;
 	}
 
+	/*
+	 * Invalidate() "doesn't" execute on TextView.
+	 */
+	private void uglyUpdate() {
+		setText(getText());
+	}
+
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
@@ -364,9 +411,8 @@ public class TextViewJ extends TextView {
 		float f2 = f1 * this.mTextLinesList.size();
 		float f3 = f2 + i + j;
 		updateParentLayoutParams((int) Utils.roundNumber(f3, 0));
-		// TODO TextViewJ: draw on center position (default)
-		float yPos = 2.0F + ((f3 - f2) / 2.0F + (this.mTextPaint.descent() - this.mTextPaint
-				.ascent()) / 2.0F);
+		float yPos = ((f3 - f2) / 2.0F + (this.mTextPaint.descent() - this.mTextPaint
+				.ascent()));
 		for (Line line : mTextLinesList) {
 			float xPos = k;
 			for (String s : line.getWords()) {

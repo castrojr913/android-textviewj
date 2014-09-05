@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- General -->
+    
+    <color name="azul_claro">#aacaff</color>
+    <color name="azul_oscuro">#0000FF</color>
+    <color name="rojo_oscuro">#FF0000</color>
+    <color name="rojo_claro">#f390aa</color>
+    <color name="verde_claro">#b6ec98</color>
+    <color name="verde_oscuro">#009e00</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="negro">#000000</color>
+    <color name="fucsia_claro">#f3ace2</color>
+    <color name="fucsia_oscuro">#ef16ec</color>
+    <color name="amarillo_claro">#f3efb3</color>
+    <color name="amarillo_oscuro">#FFFF00</color>
+    <color name="gris_oscuro">#888888</color>
+    <color name="gris_claro">#DDDDDD</color>
+    <color name="semitransparente">#15000000</color>
+        
+    <!-- Barra de navegacion -->
+    
+    <color name="boton_borde">@color/amarillo_claro</color>
+    <color name="boton_sombra">@color/gris_oscuro</color>
+    <color name="boton_relieve">@color/verde_oscuro</color>
+   
+</resources>

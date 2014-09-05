@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DemoTextViewJ</string>
+    <string name="text">Lorem ipsum dolor sit amet, nihil insolens abhorreant nec at. \n Verear petentium eu per, corpora philosophia ut has, an vel possit scripta atomorum. Inani vidisse ut vel, eu laudem repudiare quo. Ei cum regione labores facilis, veritus minimum suscipit ea vim. Ad eos facete aliquip convenire. Ius sale primis facete eu, modo ceteros salutatus eu eos.</string>
+    <string name="menu_settings">Settings</string>
+    <string name="txt_textsize">Text Size (sp):</string>
+    <string name="txt_linespacing">Line Spacing (px):</string>
+    <string name="txt_wordsbyline">Words by Line:</string>
+    <string name="txt_another_font">Another Font (Helvetica)</string>
+    <string name="txt_choose_text_color">Choose a text color:</string>
+    <string name="txt_text_color_black">Black</string>
+    <string name="txt_text_color_blue">Blue</string>
+    <string name="txt_text_color_red">Red</string>
+    <string name="txt_text_color_green">Green</string>
+    <string name="btn_submit">Submit</string>
+
+</resources>
